@@ -2,21 +2,21 @@
 def caesar_cipher(string, num)
 	if string.ascii_only?
 		new_string = ""
-			string.each_char do |char|
-					code = char.ord
-					if code.between?(97, 122)
-							code = change_code(code, num, 97, 122)
-							new_string += code.chr
-					elsif code.between?(65, 90)
-							code = change_code(code, num, 65, 90)
-							new_string += code.chr
-					elsif code == 32
-						new_string += " "
-					else 
-						new_string += char
-					end
+		string.each_char do |char|
+			code = char.ord
+			if code.between?(97, 122)
+				code = change_code(code, num, 97, 122)
+				new_string += code.chr
+			elsif code.between?(65, 90)
+				code = change_code(code, num, 65, 90)
+				new_string += code.chr
+			elsif code == 32
+				new_string += " "
+			else 
+				new_string += char
 			end
-			new_string
+		end
+		new_string
 	else 
 		return "Error!"
 	end
